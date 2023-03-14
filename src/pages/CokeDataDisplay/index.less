@@ -1,0 +1,544 @@
+.datavWrapper {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  // padding: 10px 15px;
+  background:url(/img/bg.png);
+  background-color: #101928;
+  // background-color: rgb(20, 20, 26);
+  background-size: cover;
+  background-position: bottom;
+  transform-origin: left top;
+}
+    
+.title {
+  // width: 145px;
+  font-weight: 500;
+  font-family:"Microsoft YaHei",Arial, Helvetica, sans-serif;
+  height: 30px;
+  color:#fff;
+  font-size: 18px;
+  writing-mode: horizontal-tb;
+  letter-spacing: 0px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.titleEn {
+  font-family:"Microsoft YaHei",Arial, Helvetica, sans-serif;
+  // width: 130px;
+  height: 40px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 10px;
+  writing-mode: horizontal-tb;
+  letter-spacing: 0px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.clock {
+  color:#CEEAFF;
+  font-family: DIN;
+  position: absolute;
+  right:0;
+  top:0;
+}
+
+.datavHeader {
+  position: relative;
+  height: 64px;
+  margin-bottom: 10px;
+  padding: 3px 15px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 32px;
+  background: linear-gradient(0deg, rgb(21, 35, 48) 2%, rgb(17, 26, 40) 100%);
+  .statics {
+    height:40px ;
+    position: absolute;
+    right:7%;
+    top:0;
+    width: 600px;
+    .staticsContentWrapper {
+      margin-right: 20px;
+      display:inline-block;
+      position: relative;
+      .icon {
+        margin-right: 10px;
+        display: inline-block;
+        width:15px;
+        height:12px;
+        background:#d82328
+      }
+      .staticsHeader {
+        color:rgb(255, 255, 255);
+        font-size: 12px;
+        margin:0px 5.5px 0px 0px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .staticsValue {
+        background-color: rgba(51,51,51,0);
+        color:rgb(206, 234, 255);
+        font-family: ACENS;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing:3px;
+        text-indent: 2px;
+      }
+      .staticsName {
+        color:rgba(255, 255, 255, 0.7);
+        font-size: 15px;
+        font-weight: bold;
+        margin-left: 3px;
+        letter-spacing:3px;
+        text-indent: 2px;
+      }
+    }
+  }
+}
+.areaTable {
+  overflow: hidden;
+  padding:10px 10px;
+  display: inline-block;
+  width: 154px;
+  height: 978px;
+  margin-right: 10px;
+  background: linear-gradient(0deg, rgb(21, 35, 48) 2%, rgb(17, 26, 40) 100%);
+  .areaTableItem {
+    position: relative;
+    perspective: 250px;
+    perspective-origin: 50% 100%;
+    .areaItemName{
+      border: none;
+      margin-bottom: 9.5px;
+      position: relative;
+      transform-style: preserve-3d;
+      transform-origin: 50% 50%;
+      width: 100%;
+      will-change: transform;
+      height: 23px;
+      & > span {
+        color:#fff;
+        font-size: 13px;
+        padding-right: 10px;
+      }
+      & > div {
+        display: inline-block;
+        color:rgba(255, 255, 255, 0.6);
+        font-size: 10px;
+        position: relative;
+        vertical-align: bottom;
+        font-weight: normal;
+        overflow: hidden;
+        white-space: nowrap;
+        flex: auto;
+      }
+    }
+    .areaItemNameActive {
+      .areaItemName;
+      transform: rotateX(0deg) translateZ(0px);
+      animation: areaItemNameRotate .5s;
+    }
+    .areaItemProgress {
+      transition: width .3s;
+      height: 4px;
+      background: rgb(37, 115, 229);
+      display: inline-block;
+      overflow: hidden;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      z-index: 1;
+      width: 80%;
+      .light {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 70px;
+        height: 2px;
+        background: radial-gradient(rgb(121, 218, 255) 5%, rgba(0, 0, 0, 0) 80%);
+        transform: translateX(122px);
+        animation: progressLight 6s ease-in-out infinite;
+      }
+    }
+    .areaItemSegment {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      width: 100%;
+      display: block;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 9.5px;
+    }
+  }
+  .areaSummery {
+    .areaIcon {
+        position: absolute;
+        width: 17px;
+        height: 131px;
+        pointer-events: auto;
+        background-image: url(/areaSummary.svg);
+        border-radius: 0px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .areaName {
+      margin-left: 30px;
+      width:92px;
+      height:36px;
+      font-size: 14px;
+      color:#fff;
+    }
+  }
+}
+
+.datavContent {
+  // width: 100%;
+  // height: 100%;
+}
+
+.defectCategory {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  .defectCategoryHeader {
+    padding:10px 10px;
+    width: 468px;
+    height: 64px;
+    margin-bottom: 10px;
+    background: linear-gradient(0deg, rgb(21, 35, 48) 2%, rgb(17, 26, 40) 100%);
+  }
+  .defectCategoryContent {
+    overflow: hidden;
+    padding:10px;
+    width: 468px;
+    height: 654px;
+    background: linear-gradient(0deg, rgb(21, 35, 48) 2%, rgb(17, 26, 40) 100%);
+    .defectCategoryChartTitle {
+      text-align: center;
+      height:30px;
+      line-height: 30px;
+      color:#fff;
+      font-size:15px ;
+      font-weight: bold;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .waterWave {
+      border: none;
+      position: relative;
+      width: 100%;
+      will-change: transform;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transform-origin: 50% 50%;
+      padding-top: 28px;
+      padding-left: 10px; 
+    }
+    .waterWaveActive {
+      .waterWave;
+      transform: rotateX(0deg) translateZ(0px);
+      animation: waterWaveRotate .5s;
+    }
+  }
+  .defectCard {
+    padding: 10px 10px 10px 20px;
+    width: 140px;
+    height: 98px;
+    background:rgba(10, 115, 255, 0.12);
+    .defectCardTitle {
+      color: rgb(206, 234, 255);
+      font-weight: normal;
+      font-family: "Microsoft Yahei", Arial, "sans-serif";
+      font-size: 14px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .defectCardNum {
+      position: relative;
+      margin-top: 3px;
+      .defectCardNumValue {
+        background-color: rgba(51,51,51,0);
+        color:rgb(61, 171, 255);
+        font-family: ACENS;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing:3px;
+        text-indent: 2px;
+      }
+      .defectCardNumName {
+        color:rgba(255, 255, 255, 0.7);
+        font-size: 15px;
+        font-weight: bold;
+        margin-left: 3px;
+        letter-spacing:3px;
+        text-indent: 2px;
+      }
+    }
+    .defectCardPercent {
+      position: relative;
+      .plus {
+        color:#d82328;
+        font-weight: bold;
+        font-size: 13px;
+        margin-right: 8px;
+      }
+      .minus {
+        color:#26dd82ab;
+        font-weight: bold;
+        font-size: 13px;
+        margin-right: 8px;
+      }
+      .defectCardPercentValue {
+        color:rgba(255, 255, 255, 0.7);
+        font-family: ACENS;
+        font-size: 15px;
+        font-weight: bold;
+        letter-spacing:2px;
+      }
+      .defectCardPercentName {
+        color:rgba(255, 255, 255, 0.7);
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing:2px;
+      }
+    }
+  }
+}
+
+.lineCharts {
+  border: none;
+  position: absolute;
+  bottom: 15px;
+  left: 179px;
+  width: 823px;
+  height: 243px;
+  background: linear-gradient(0deg, rgb(21, 35, 48) 2%, rgb(17, 26, 40) 100%);
+  .lineChartHeader {
+    position: absolute;
+    top:0;
+    left:10px;
+    padding:10px 10px;
+    width: 200px;
+    height: 64px;
+    margin-bottom: 10px;
+    background: linear-gradient(0deg, rgb(21, 35, 48) 2%, rgb(17, 26, 40) 100%);
+  }
+}
+
+.videoWrapper {
+  display: inline-block;
+  margin-right: 10px;
+  .videoHeader {
+    padding:10px 10px;
+    width: 1153px;
+    height: 64px;
+    margin-bottom: 10px;
+    background: linear-gradient(0deg, rgb(21, 35, 48) 2%, rgb(17, 26, 40) 100%);
+  }
+  .defectList {
+    padding:10px 10px;
+    width: 345px;
+    height: 654px;
+    margin-right: 10px;
+    background: linear-gradient(0deg, rgb(21, 35, 48) 2%, rgb(17, 26, 40) 100%);
+    .defectListHeader {
+      .defectListHeaderText {
+        padding:5px 2px;
+        color:#fff;
+        // border:.5px solid #95c0e1
+      }
+    }
+    .defectListWrapper {
+      width:323px;
+      height:540.667px;
+      overflow:hidden;
+      &:hover {
+        cursor: pointer;
+      }
+      .defectListItem {
+        width: 100%;
+        height:38.6667px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        background-color: rgba(38, 59, 88, 0);
+      }
+      .defectListItemActive {
+        width: 100%;
+        height:38.6667px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: all 1s;
+        transform: translate3D(0px, -38.6667px, 0px);
+        background-color: rgba(40, 64, 98, 0);
+      }
+      .defectListItemIcon {
+        color:#fff;
+        background-color: #4d535c;
+        font-family: Microsoft Yahei;
+        font-weight: normal;
+        width: 16.88px;
+        height: 16.88px;
+        line-height: 16.88px;
+        vertical-align: middle;
+        margin: auto;
+        border-radius: 8.44px;
+        text-align: center;
+      }
+      .defectListItemText {
+        display: inline-block;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 14px;
+        color:#95c0e1;
+        // margin-left: 5px;
+        line-height: 14px;
+      }
+    }
+  }
+  .videoContent {
+    width: 796px;
+    height: 421px;
+    margin-bottom: 10px;
+    background: linear-gradient(0deg, rgb(21, 35, 48) 2%, rgb(17, 26, 40) 100%);
+  }
+}
+
+.resource {
+  .resourceHeader {
+    padding:10px 10px;
+    width: 796px;
+    height: 64px;
+    margin-bottom: 10px;
+    background: linear-gradient(0deg, rgb(21, 35, 48) 2%, rgb(17, 26, 40) 100%);
+  }
+  .resourceContent {
+    padding:10px;
+    width: 796px;
+    height: 401px;
+    background: linear-gradient(0deg, rgb(21, 35, 48) 2%, rgb(17, 26, 40) 100%);
+    .resourceNameWrapper {
+      margin-right: 5px;
+      display: inline-block;
+      padding:5px;
+      position: relative;
+      width:150px;
+      height:54px;
+      background:rgba(10, 115, 255, 0.12);
+      .resourceNameIcon {
+        position: absolute;
+        top:45%;
+        height:10px;
+        width:10px;
+      }
+    }
+    .resourceValueWrapper{
+      display: inline-block;
+      text-align: center;
+      width:200px;
+      height:54px;
+      padding:5px;
+      padding-top: 10px;
+      background:rgba(10, 115, 255, 0.12);
+      .resourceNumValue {
+        background-color: rgba(51,51,51,0);
+        color:rgb(61, 171, 255);
+        font-family: ACENS;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing:3px;
+        text-indent: 2px;
+      }
+      .resourceNumName {
+        color:rgba(255, 255, 255, 0.7);
+        font-size: 15px;
+        font-weight: bold;
+        margin-left: 3px;
+        letter-spacing:3px;
+        text-indent: 2px;
+      }
+    }
+  }
+}
+
+.todoList {
+  position: relative;
+  padding:10px 10px;
+  width: 83px;
+  height: 980px;
+  background: linear-gradient(0deg, rgb(21, 35, 48) 2%, rgb(17, 26, 40) 100%);
+  .todoWrapper {
+    position: relative;
+    width: 58px;
+    height:454px;
+    background-image:url(/todobg.svg);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    .contentWrapper {
+      width:37px;
+      height:39px;
+      overflow: hidden;
+      .content {
+        text-align: center;
+        color: rgb(61, 171, 255);
+        font-weight: normal;
+        font-family: "Microsoft Yahei";
+        font-size: 10px;
+        line-height: 16px;
+        text-indent: 0px;
+      }
+    }
+  }
+  .todoListBottom {
+    position: absolute;
+    width:40px;
+    height: 127px;
+    background-image:url(/todolistBottom.svg);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    left:50%;  
+    bottom:30px;
+    transform: translate(-50%,-50%);
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: DIN;
+  src: url(/font/Din-Font/Din.ttf);
+}
+
+@font-face {
+  font-family: ACENS;
+  src: url(/font/Acens-Font/Acens.ttf);
+}
+
+@keyframes progressLight {
+  0%,80% { transform: translateX(-70px); }
+  85% { transform: translateX(-70px); }
+  90% { transform: translateX(7px); }
+  95% { transform: translateX(102px); }
+  100% { transform: translateX(122px); }
+}
+
+@keyframes areaItemNameRotate {
+  // 25% { transform: rotateX(-80deg) translateZ(0px); }
+  // 50% { transform: rotateX(-10deg) translateZ(0px); }
+  0% { transform: rotateX(80deg) translateZ(0px); }
+  100% { transform: rotateX(0deg) translateZ(0px); }
+}
+
+@keyframes waterWaveRotate {
+  // 25% { transform: rotateX(-80deg) translateZ(0px); }
+  // 50% { transform: rotateX(-10deg) translateZ(0px); }
+  0% { transform: rotateY(80deg) }
+  100% { transform: rotateY(0deg) }
+}
